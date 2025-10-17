@@ -1,0 +1,486 @@
+/*====================================
+  1. ROOT VARIABLES (Theme Colors, Fonts)
+====================================*/
+:root {
+  --bg: #0b0c10;
+  --primary: #66fcf1;
+  --accent: #45a29e;
+  --text: #c5c6c7;
+  --heading: #ffffff;
+  --radius: 12px;
+  --transition: 0.3s ease-in-out;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/*====================================
+  2. GLOBAL RESET & BASE STYLES
+====================================*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Container Utility */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-3px);
+}
+
+/*====================================
+  3. NAVIGATION BAR
+====================================*/
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: rgba(11,12,16,0.9);
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Hamburger (mobile) hidden by default */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: var(--text);
+  margin-bottom: 5px;
+  border-radius: var(--radius);
+}
+
+/*====================================
+  4. HERO SECTION
+====================================*/
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 4rem; /* offset for fixed navbar */
+}
+
+.hero-content {
+  flex: 1;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.greeting {
+  font-size: 1.25rem;
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--heading);
+  margin: 0.5rem 0;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.description {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.hero-buttons {
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--primary);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 300px;
+  border-radius: 50%;
+  border: 5px solid var(--primary);
+  animation: float 3s ease-in-out infinite;
+}
+
+/*====================================
+  5. SECTIONS TITLES
+====================================*/
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--heading);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0.5rem auto;
+  border-radius: var(--radius);
+}
+
+/*====================================
+  6. ABOUT SECTION
+====================================*/
+.about {
+  padding: 6rem 0;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.about-text .btn-primary {
+  margin-top: 1rem;
+}
+
+/*====================================
+  7. SKILLS SECTION
+====================================*/
+.skills {
+  padding: 6rem 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category h3 {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-item {
+  background: rgba(102,252,241,0.1);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.skill-item:hover {
+  background: rgba(102,252,241,0.2);
+  transform: translateY(-3px);
+}
+
+.skill-item i {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+/*====================================
+  8. PROJECTS SECTION
+====================================*/
+.projects {
+  padding: 6rem 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  transition: transform var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  transition: transform var(--transition);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11,12,16,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.btn-icon {
+  background: var(--primary);
+  color: var(--bg);
+  padding: 0.75rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: transform var(--transition);
+}
+
+.btn-icon:hover {
+  transform: scale(1.2);
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+.project-info h3 {
+  font-family: var(--font-heading);
+  color: var(--heading);
+  margin-bottom: 0.5rem;
+}
+
+.project-info p {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-tags span {
+  display: inline-block;
+  background: rgba(69,162,158,0.2);
+  color: var(--accent);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+}
+
+/* View All Button */
+.view-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/*====================================
+  9. CONTACT SECTION
+====================================*/
+.contact {
+  padding: 6rem 0;
+}
+
+.contact-description {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  width: 220px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.contact-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-3px);
+}
+
+.contact-card i {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-card h3 {
+  font-family: var(--font-heading);
+  color: var(--heading);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-card p {
+  font-size: 0.9rem;
+}
+
+/*====================================
+ 10. FOOTER
+====================================*/
+.footer {
+  background: rgba(11,12,16,0.9);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: var(--primary);
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/*====================================
+ 11. ANIMATIONS & KEYFRAMES
+====================================*/
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/*====================================
+ 12. RESPONSIVE BREAKPOINTS
+====================================*/
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-image img { width: 200px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .name { font-size: 2.5rem; }
+  .tagline { font-size: 1.25rem; }
+  .project-card { margin-bottom: 2rem; }
+}
